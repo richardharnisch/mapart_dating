@@ -147,6 +147,15 @@ st.set_page_config(page_title="Mapart Carbon Dating", page_icon="📈", layout="
 
 st.title("📈 Mapart Carbon Dating: Interactive Version")
 
+st.markdown(
+    """
+This app helps you estimate the date of a mapart based on its ID number by
+interpolating between known dates from a dataset. Values outside the known range
+will return an error. Data is sourced from 36_'s [Google Sheet](https://docs.google.com/spreadsheets/d/1vpDEIZr7sR7ASlCm3qmscsSiCi9oz6yzr8oJV8He_L0/edit?pli=1&gid=356591123#gid=356591123),
+but you can enter a custom CSV link if you want to.
+"""
+)
+
 query_id = st.number_input("Enter ID to date", value=604, step=1, format="%d")
 run = st.button("Interpolate")
 
